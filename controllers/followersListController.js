@@ -1,0 +1,19 @@
+const signupModel = require('../models/signupModel');
+
+const followersListController = async (req, res) =>{
+                                          try
+                                          {
+                                            const {email} = req.body;
+
+                                              const followersListDetails = await signupModel.findOne({email}).populate("followers");
+                                              // const allPostDetails = await postModel.find().populate("postedBy", "_id uname");  /*if only need for _id and uname*/
+                                              return res.status(200).json({followersListDetails});  //if in {var} stores in that var, else blank []
+
+                                          }catch(e)
+                                            {
+                                                console.error(e);
+                                                return res.status(422).json({error : "Failed to fetch my posted data"});
+                                            }
+                                       }
+
+module.exports = followersListController;
