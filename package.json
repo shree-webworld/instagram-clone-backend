@@ -2,7 +2,7 @@
   "name": "Photogram",
   "version": "1.0.0",
   "description": "Instagram clone app.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
